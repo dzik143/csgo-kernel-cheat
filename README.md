@@ -25,5 +25,6 @@
   - then user-app can comminicate with driver **LIKE WITH A FILE**:
     - call [CreateFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea) to **OPEN** a driver, then the driver receives **IRP_MJ_CREATE** request,
     - call [ReadFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile) to **READ** data delivered by driver, then the driver receives **IRP_MJ_READ** request and can pass arbitrary data in response,
-    - call [WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile) to **WRITE** own data to the driver, then the driver receives **IRP_MJ_WRITE** request and can process received data in arbitrary way.
+    - call [WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile) to **WRITE** own data to the driver, then the driver receives **IRP_MJ_WRITE** request and can process received data in arbitrary way,
+    - call [CloseHandle](https://docs.microsoft.com/en-us/windows/win32/api/handleapi/nf-handleapi-closehandle) to **CLOSE** a driver handle if it's not needed anymore, then the driver receives **IRP_MJ_CLOSE** request.
 
