@@ -17,7 +17,7 @@
   - read from CS:GO memory by asking a driver, 
   - emit fake mouse click (fire weapon) depending on game state.
   
-# How does user app commucate with kernel driver?
+# How does user app communicate with kernel driver?
 
   - Kernel drivers can registers its **SYMBOLIC NAME** (*csgo-trigger*),
   - then user-app can comminicate with driver **LIKE WITH A FILE**:
