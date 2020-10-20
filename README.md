@@ -22,7 +22,8 @@
 # How does user app commucate with kernel driver?
 
   - Kernel drivers can registers its **SYMBOLIC NAME** (*csgo-trigger*),
-  - user-app can use this name open a driver using [CreateFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea) - then the driver receives **IRP_MJ_CREATE** request,
-  - user-app can reads data delivered by driver using [ReadFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile) - then the driver receives **IRP_MJ_READ** request and can pass arbitrary data in response,
-  - user-app can writes own data to the driver using [WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile) - then the driver receives **IRP_MJ_WRITE** request and can process received data in arbitrary way.
+  - then user-app can comminicate with driver **LIKE WITH A FILE**:
+    - call [CreateFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea) to **OPEN** a driver, then the driver receives **IRP_MJ_CREATE** request,
+    - call [ReadFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile) to **READ** data delivered by driver, then the driver receives **IRP_MJ_READ** request and can pass arbitrary data in response,
+    - call [WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile) to **WRITE** own data to the driver, then the driver receives **IRP_MJ_WRITE** request and can process received data in arbitrary way.
 
