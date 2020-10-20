@@ -7,4 +7,3 @@ Driver does:
   - Find client.dll, open and read data from it on ReadHandler (called when
     ReadFile called in ring3). Data is packed into ClientData struct.
 
-**WARNING**: Tested on XP/32 only.
