@@ -8,8 +8,8 @@
 
   - create symbolic device *\\Device\\csgo-trigger*,
   - register driver handlers:
-    - [IRP_MJ_READ](https://docs.microsoft.com/pl-pl/windows-hardware/drivers/kernel/irp-mj-read): find out *csgo.exe* process, then **READ FROM ITS MEMORY**,
-    - [IRP_MJ_WRITE](https://docs.microsoft.com/pl-pl/windows-hardware/drivers/kernel/irp-mj-write): finds out *csgo.exe* process, then **WRITE TO ITS MEMORY**,
+    - [IRP_MJ_READ](https://docs.microsoft.com/pl-pl/windows-hardware/drivers/kernel/irp-mj-read): find *csgo.exe* process, then **READ FROM ITS MEMORY**,
+    - [IRP_MJ_WRITE](https://docs.microsoft.com/pl-pl/windows-hardware/drivers/kernel/irp-mj-write): find *csgo.exe* process, then **WRITE TO ITS MEMORY**,
   
 # What does user-mode app do?
 
